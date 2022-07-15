@@ -76,23 +76,4 @@
         @endforeach
     </tbody>
 </table>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-<script type="text/javascript">
-    $('#search').on('keyup',function(){
-    $value=$(this).val();
-    $.ajax({
-    type : 'get',
-    url : '{{URL::to('search')}}',
-    data:{'search':$value},
-    success:function(data){
-    $('tbody').html(data);
-    }
-    });
-    })
-    </script>
-    <script type="text/javascript">
-        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
-    </script>
 @endsection

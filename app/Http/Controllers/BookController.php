@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBookRequest;
+use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -46,7 +48,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $authors = Author::all();
+        return view('adminPanel.book.add', ['authors' => $authors]);
     }
 
     /**
@@ -57,7 +60,24 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->validate([
+            'name'      => 'required',
+            'year'      => 'required',
+            'thumbnail' => 'required',
+        ]);
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+
+        $book = Book::create($attributes);
+
+        $authors = $request->authors;
+
+        if ($authors) {
+            foreach ($authors as $author) {
+                $book->authors()->attach($author);
+            }
+        }
+
+        return redirect()->route('books.index');
     }
 
     /**

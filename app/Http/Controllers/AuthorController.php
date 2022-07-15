@@ -12,9 +12,11 @@ class AuthorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $authors = Author::where('name', 'LIKE', '%' . $request->name . '%')->orderBy('id', 'ASC')->get();
+
+        return view('adminPanel.author.index', ['authors' => $authors]);
     }
 
     /**

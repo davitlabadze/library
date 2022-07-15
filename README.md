@@ -67,7 +67,7 @@ cp .env.example .env
 ```
 Create database file
 ```bash
-touch database/database.sqlit
+touch database/database.sqlite
 ```
 Create key 
 ```bash

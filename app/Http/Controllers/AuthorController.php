@@ -38,14 +38,8 @@ class AuthorController extends Controller
      */
     public function store(StoreAuthorRequest $attributes)
     {
-        // $attributes = $request->validate([
-        //         'name'      => 'required',
-        //         'thumbnail' => 'required',
-        // ]);
-        // $attributes = Author::create($attributes->validated());
         $attributes = $attributes->validated();
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-        // Author::create($attributes);
         Author::create($attributes);
         return redirect()->route('authors.index');
     }

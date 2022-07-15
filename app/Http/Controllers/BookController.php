@@ -97,9 +97,11 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
-        //
+        $authors = Author::all();
+        $book = Book::find($id);
+        return view('adminPanel.book.update', ['authors' => $authors, 'book' => $book]);
     }
 
     /**
@@ -109,9 +111,27 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, $id)
     {
-        //
+        $attributes = $request->validate([
+            'name'      => 'required',
+            'year'      => 'required',
+            'thumbnail' => 'required',
+        ]);
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        $book = Book::findOrFail($id);
+        $book->update($attributes);
+
+        $authors = $request->authors;
+
+        if ($authors) {
+            $book->authors()->detach();
+
+            foreach ($authors as $author) {
+                $book->authors()->attach($author);
+            }
+        }
+        return redirect()->route('books.index');
     }
 
     /**

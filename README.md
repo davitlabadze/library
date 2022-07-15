@@ -85,10 +85,13 @@ Insert demo data on database
 ```bash
 php artisan db:seed
 ```
+Build App
+```bash
+npm run build
+```
+
 Run app 
 >If the design is not as shown in the photo, open a new window(terminal or cmd or other) in the working environment and run the command  ```npm run dev```
-
-
 
 ```bash
 php artisan server

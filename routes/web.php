@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::resource('/authors', AuthorController::class)->except('show')->names('authors');
+    Route::resource('/books', BookController::class)->except('show')->names('books');
+});

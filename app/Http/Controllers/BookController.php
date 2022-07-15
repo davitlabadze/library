@@ -12,9 +12,31 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $books = Book::with('authors')->orderBy('id', 'ASC');
+
+        if ($request->name) {
+            $books->where('name', 'LIKE', '%' . $request->name . '%');
+        }
+        if ($request->year) {
+            $books->where('year', 'LIKE', '%' . $request->year . '%');
+        }
+        if ($request->author) {
+            $books->whereRelation('authors', 'name', 'LIKE', '%' . $request->author . '%');
+        }
+        if ($request->status) {
+            if ($request->status == "free" || $request->status == "Free" || $request->status == "FREE") {
+                $books->where('status', 'LIKE', 0);
+            }
+            if ($request->status == "busy" || $request->status == "Busy" || $request->status == "BUSY") {
+                $books->where('status', 'LIKE', 1);
+            }
+        }
+        $books = $books->get();
+
+
+        return view('adminPanel.book.index', ['books' => $books]);
     }
 
     /**

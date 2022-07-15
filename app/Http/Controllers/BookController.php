@@ -140,8 +140,11 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        $book->authors()->detach();
+        $book->delete();
+        return redirect()->route('books.index');
     }
 }

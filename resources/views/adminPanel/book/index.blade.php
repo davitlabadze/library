@@ -60,7 +60,7 @@
             <td class='w-1/4 p-4 px-6 text-gray-500 dark:text-slate-600'>
                 {{ $book->year }}
             </td>
-            <td class='w-1/4 p-4 px-6 text-gray-500 dark:text-slate-600'>
+            <td class='w-1/4 p-4 px-6 text-gray-500 dark:text-slate-600 '>
                 @foreach ($book->authors as $authors)
                     <span class="p-1 text-white border rounded bg-sky-500">{{ $authors->name }}</span>
                 @endforeach
@@ -71,8 +71,6 @@
                 @else
                     <span class="p-1 text-white bg-red-400 rounded ">Busy</span>
                 @endif
-
-
             </td>
             <td class='w-1/4 p-4 px-6 text-gray-500 dark:text-slate-600'>
                 @if(!File::exists(public_path('storage/'.$book->thumbnail)))

@@ -13,7 +13,7 @@
 </div>
 <form action="{{route('books.index')}}" method="POST" class="mt-10" enctype="multipart/form-data">
     @csrf
-    <div class="w-1/2 mb-6">
+    <div class="mb-6">
         <label class="block">
             <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                 Name

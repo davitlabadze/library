@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Author;
+use App\Models\Book;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(AuthorSeeder::class);
+        $this->call(BookSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        DB::table('author_book')->insert([
+            ['author_id' => 7, 'book_id' => 1],
+            ['author_id' => 2, 'book_id' => 2],
+            ['author_id' => 2, 'book_id' => 3],
+            ['author_id' => 5, 'book_id' => 4],
+            ['author_id' => 6, 'book_id' => 5],
+        ]);
     }
 }

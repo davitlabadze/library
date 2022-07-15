@@ -85,6 +85,10 @@ Insert demo data on database
 ```bash
 php artisan db:seed
 ```
+Install npm
+```bash
+npm i
+```
 Build App
 ```bash
 npm run build

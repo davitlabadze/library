@@ -61,9 +61,10 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Author $author)
+    public function edit($id)
     {
-        //
+        $authorToEdit = Author::where('id', $id)->firstOrfail();
+        return view('adminPanel.author.update', ['author' => $authorToEdit]);
     }
 
     /**
@@ -73,9 +74,15 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $author)
+    public function update(StoreAuthorRequest $attributes, $id)
     {
-        //
+        $attributes = $attributes->validated();
+        if (isset($attributes['thumbnail'])) {
+            $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        }
+        Author::where('id', $id)->update($attributes);
+
+        return redirect()->route('authors.index');
     }
 
     /**

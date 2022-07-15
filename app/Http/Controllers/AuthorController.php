@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreAuthorRequest;
 use App\Models\Author;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminPanel.author.add');
     }
 
     /**
@@ -35,9 +36,18 @@ class AuthorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAuthorRequest $attributes)
     {
-        //
+        // $attributes = $request->validate([
+        //         'name'      => 'required',
+        //         'thumbnail' => 'required',
+        // ]);
+        // $attributes = Author::create($attributes->validated());
+        $attributes = $attributes->validated();
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        // Author::create($attributes);
+        Author::create($attributes);
+        return redirect()->route('authors.index');
     }
 
     /**

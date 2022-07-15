@@ -91,8 +91,11 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Author $author)
+    public function destroy($id)
     {
-        //
+        $Author = Author::findOrFail($id);
+        $Author->books()->detach();
+        $Author->delete();
+        return redirect()->route('authors.index');
     }
 }

@@ -67,7 +67,7 @@ cp .env.example .env
 ```
 Create database file
 ```bash
-touch database/database.sqlit
+touch database/database.sqlite
 ```
 Create key 
 ```bash
@@ -84,6 +84,10 @@ php artisan storage:link
 Insert demo data on database  
 ```bash
 php artisan db:seed
+```
+Install npm
+```bash
+npm i
 ```
 Build App
 ```bash

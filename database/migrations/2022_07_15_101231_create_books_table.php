@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->boolean('status')->default(false);
-            $table->string('year');
+            $table->year('year');
             $table->string('thumbnail');
             $table->timestamps();
         });

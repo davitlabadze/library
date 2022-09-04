@@ -62,7 +62,7 @@ class BookController extends Controller
     {
         $attributes = $request->validate([
             'name'      => 'required',
-            'year'      => 'required',
+            'year'      => 'required|digits:4|integer',
             'thumbnail' => 'required',
         ]);
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');

@@ -9,11 +9,20 @@
     <title>Library</title>
 </head>
 
-<body>
-    <div class="items-center justify-center text-5xl text-center mt-96">
-        <div>
-            <h1 class="text-green-700">E-library <span></span></h1>
-        </div>
+<body class="bg-orange-100">
+    <div class="mt-12">
+        <nav class="flex justify-between px-24">
+            <h1 class="text-3xl font-black">E-Library</h1>
+            <div class="flex space-x-5">
+                <div>text</div>
+                <img src="{{ asset('image/avatar.jpeg') }}" class="w-32 h-auto rounded-full" alt="">
+
+            </div>
+            {{-- <div>
+                <img src="" alt="">
+
+            </div> --}}
+        </nav>
     </div>
 </body>
 

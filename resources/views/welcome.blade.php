@@ -19,7 +19,7 @@
                 <div class="mt-2 text-white">
                     <img src="{{ asset('image/bookmark.svg') }}" class="w-6 h-6 text-white" alt="">
                 </div>
-                <img src="{{ asset('image/avatar.jpeg') }}" class="w-10 h-10 rounded-full" alt="">
+                <img src="{{ asset('image/avatar.jpeg') }}" class="w-10 h-10 text-center rounded-full" alt="">
             </div>
         </nav>
     </div>
@@ -46,22 +46,49 @@
 
     </div>
     <div class="bg-stone-200  ml-20 h-12 w-11/12
-
     border-l-[110px] border-l-orange-100
     border-b-[50px] border-b-transparent
     border-r-[110px] border-r-orange-100
     "></div>
     <div class="z-50 w-11/12 h-4 ml-20 bg-white rounded "></div>
 
-    <div class="container mx-auto bg-orange-50 rounded-b-3xl">
+    <div class="container mx-auto mb-12 bg-orange-50 rounded-b-3xl">
         <div class="w-full h-12 opacity-90 -z-20 bg-gradient-to-b from-gray-400 blur-sm"></div>
 
-        <div class="grid grid-cols-3 mt-12 text-center ">
+        <div class="grid grid-cols-3 mt-12 mb-12 text-center ">
 
-            <div>text</div>
+            <div class="grid grid-cols-2 mb-12 ">
+                <img src="{{ asset('image/4.jpeg') }}" class="h-auto ml-28 w-36 " alt="image">
+                <div>
+                    <h1>A Game of THRONES</h1>
+                    <p class="mt-2 text-gray-400">GEORGE R.R MARTIN</p>
+                    <p class="w-16 mt-2 ml-24 text-white bg-green-500 rounded-md">Free</p>
+                    <button
+                        class="p-2 mt-12 text-xl text-orange-400 border border-orange-400 rounded-3xl">Subscribe</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 mb-12 ">
+                <img src="{{ asset('image/1.jpeg') }}" class="h-auto ml-28 w-36 " alt="image">
+                <div>
+                    <h1>Harry Potter: and the Chamber of secrets</h1>
+                    <p class="mt-2 text-gray-400">J.K ROWLING</p>
+                    <p class="w-16 mt-2 ml-24 text-white bg-red-500 rounded-md">Busy</p>
+                    <button
+                        class="p-2 mt-12 text-xl text-orange-400 border border-orange-400 rounded-3xl">Bookmark</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 mb-12 ">
+                <img src="{{ asset('image/2.jpeg') }}" class="h-auto ml-28 w-36 " alt="image">
+                <div>
+                    <h1>The OPPOSITE of Fate hardcover</h1>
+                    <p class="mt-2 text-gray-400">AMY TAN</p>
+                    <p class="w-16 mt-2 ml-24 text-white bg-green-500 rounded-md">Free</p>
+                    <button
+                        class="p-2 mt-12 text-xl text-orange-400 border border-orange-400 rounded-3xl">Subscribe</button>
+                </div>
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>

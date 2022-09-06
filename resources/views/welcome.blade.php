@@ -15,12 +15,20 @@
     <div class="mt-12">
         <nav class="flex justify-between px-24">
             <h1 class="text-3xl font-black">E-Library</h1>
+            @auth
             <div class="flex space-x-5">
                 <div class="mt-2 text-white">
                     <img src="{{ asset('image/bookmark.svg') }}" class="w-6 h-6 text-white" alt="">
                 </div>
                 <img src="{{ asset('image/avatar.jpeg') }}" class="w-10 h-10 text-center rounded-full" alt="">
             </div>
+            @endauth
+            @guest
+            <div>
+                <button
+                    class="p-3 text-orange-500 border border-orange-500 rounded-3xl hover:text-white hover:bg-orange-500">Authorization</button>
+            </div>
+            @endguest
         </nav>
     </div>
     <div class="container grid grid-cols-3 mx-auto mt-12 text-center rounded-t-3xl bg-orange-50">

@@ -23,7 +23,7 @@
             </div>
         </nav>
     </div>
-    <div class="container grid grid-cols-3 mx-auto mt-12 text-center rounded-top-lg bg-orange-50">
+    <div class="container grid grid-cols-3 mx-auto mt-12 text-center rounded-t-3xl bg-orange-50">
         <div class="mt-40">
             <h1 class="text-7xl">New & Trending</h1>
             <p class="mt-4 text-gray-400">Explorer new worlds from authors</p>
@@ -35,7 +35,7 @@
                 class="translate-y-10 ml-20 w-96 mt-12 shadow-[20px_0px_20px_rgba(0,0,0,0.3)]" alt="">
         </div>
         <div class="p-36">
-            <div class="w-56 p-4 bg-orange-300 h-96 rounded-2xl">
+            <div class="w-56 p-4 bg-orange-300 shadow-xl h-96 rounded-2xl">
                 <h1>Leo Tolstoy</h1>
                 <h1>Collection</h1>
                 <p class="mt-2 text-stone-600">67 book</p>
@@ -45,21 +45,22 @@
         </div>
 
     </div>
-    <div class="bg-orange-200  ml-20 h-12 w-11/12
+    <div class="bg-stone-200  ml-20 h-12 w-11/12
 
     border-l-[110px] border-l-orange-100
     border-b-[50px] border-b-transparent
     border-r-[110px] border-r-orange-100
     "></div>
+    <div class="z-50 w-11/12 h-4 ml-20 bg-white rounded "></div>
 
-    {{-- <div class="mx-auto abslute"> --}}
-        {{-- <div class="w-full h-24 bg-red-500
+    <div class="container mx-auto bg-orange-50 rounded-b-3xl">
+        <div class="w-full h-12 opacity-90 -z-20 bg-gradient-to-b from-gray-400 blur-sm"></div>
 
-        border-b-[150px] border-b-transparent
-        border-l-[100px] border-l-orange-50
-        border-r-[100px] border-r-orange-50"></div> --}}
-        {{-- </div> --}}
-    <div class="w-11/12 h-4 ml-20 bg-white rounded "></div>
+        <div class="grid grid-cols-3 mt-12 text-center ">
+
+            <div>text</div>
+        </div>
+    </div>
 
 </body>
 

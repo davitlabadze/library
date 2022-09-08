@@ -26,30 +26,41 @@
             @guest
             <div>
                 <button
-                    class="p-3 text-orange-500 border border-orange-500 rounded-3xl hover:text-white hover:bg-orange-500">Authorization</button>
+                    class="p-3 text-orange-500 border border-orange-500 rounded-3xl hover:text-white hover:bg-orange-500">Sign
+                    In</button>
             </div>
             @endguest
         </nav>
     </div>
-    <div class="container grid grid-cols-3 mx-auto mt-12 text-center rounded-t-3xl bg-orange-50">
-        <div class="mt-40">
-            <h1 class="text-7xl">New & Trending</h1>
-            <p class="mt-4 text-gray-400">Explorer new worlds from authors</p>
-            <input type="search" name="search" id="search" placeholder="Title, author, or topics"
-                class="p-4 px-12 mt-6 bg-no-repeat shadow-md outline-none bg-left-1 bg-search rounded-3xl" />
-        </div>
-        <div>
-            <img src="{{ asset('image/5.jpeg') }}"
-                class="translate-y-10 ml-20 w-96 mt-12 shadow-[20px_0px_20px_rgba(0,0,0,0.3)]" alt="">
-        </div>
-        <div class="p-36">
-            <div class="w-56 p-4 bg-orange-300 shadow-xl h-96 rounded-2xl">
-                <h1>Leo Tolstoy</h1>
-                <h1>Collection</h1>
-                <p class="mt-2 text-stone-600">67 book</p>
-                <img src="{{ asset('image/LeoTolstoy.jpeg') }}" class=" mt-11" alt="">
-            </div>
 
+
+    <div class="container mx-auto mt-10 text-center rounded-t-3xl bg-orange-50">
+        <div class="flex justify-center text-center ">
+            <button class="flex px-10 py-3 mt-6 border border-orange-400 border-1 hover:bg-orange-400 rounded-3xl">
+                <img src="{{ asset('image/book.png') }}" class="w-6 h-6" alt="">
+                <p class="ml-2">Books</p>
+            </button>
+        </div>
+        <div class="grid grid-cols-3">
+            <div class="mt-40">
+                <h1 class="text-7xl">New & Trending</h1>
+                <p class="mt-4 text-gray-400">Explorer new worlds from authors</p>
+                <input type="search" name="search" id="search" placeholder="Title, author, or topics"
+                    class="p-4 px-12 mt-6 bg-no-repeat shadow-md outline-none bg-left-1 bg-search rounded-3xl" />
+            </div>
+            <div>
+                <img src="{{ asset('image/5.jpeg') }}"
+                    class="translate-y-10 ml-20 w-96 mt-12 shadow-[20px_0px_20px_rgba(0,0,0,0.3)]" alt="">
+            </div>
+            <div class="p-36">
+                <div class="w-56 p-4 bg-orange-300 shadow-xl h-96 rounded-2xl">
+                    <h1>Leo Tolstoy</h1>
+                    <h1>Collection</h1>
+                    <p class="mt-2 text-stone-600">67 book</p>
+                    <img src="{{ asset('image/LeoTolstoy.jpeg') }}" class=" mt-11" alt="">
+                </div>
+
+            </div>
         </div>
 
     </div>

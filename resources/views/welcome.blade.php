@@ -72,10 +72,11 @@
     <div class="z-50 w-11/12 h-4 ml-20 bg-white rounded "></div>
 
     <div class="container mx-auto mb-12 bg-orange-50 rounded-b-3xl">
+
         <div class="w-full h-12 opacity-90 -z-20 bg-gradient-to-b from-gray-400 blur-sm"></div>
 
+        <div class="absolute flex text-xl -rotate-90 mt-36">Recent Bestsellers</div>
         <div class="grid grid-cols-3 mt-12 mb-12 text-center ">
-
             <div class="grid grid-cols-2 mb-12 ">
                 <img src="{{ asset('image/4.jpeg') }}" class="h-auto ml-28 w-36 " alt="image">
                 <div>

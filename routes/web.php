@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/books', function () {
+    return view('books');
+});
+
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('/authors', AuthorController::class)->except('show')->names('authors');

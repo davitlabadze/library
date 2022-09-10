@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/welcome');
 });
 
 Route::get('/books', function () {
-    return view('books');
+    return view('pages/books');
 });
 
 Route::prefix('/admin')->group(function () {

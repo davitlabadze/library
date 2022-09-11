@@ -13,9 +13,9 @@
         @endauth
         @guest
         <div>
-            <button
+            <a href="{{ url('/sign-in') }}"
                 class="p-3 text-orange-500 border border-orange-500 rounded-3xl hover:text-white hover:bg-orange-500">Sign
-                In</button>
+                In</a>
         </div>
         @endguest
     </nav>

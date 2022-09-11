@@ -28,6 +28,10 @@ Route::get('/book/{id}', function () {
     return view('pages/book');
 });
 
+Route::get('/sign-in', function () {
+    return view('auth/signin');
+});
+
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('/authors', AuthorController::class)->except('show')->names('authors');

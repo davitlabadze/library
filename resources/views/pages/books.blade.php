@@ -13,43 +13,168 @@
     <input type="search" placeholder="Title, author, or topics" name="search" id="search"
         class="w-1/2 p-4 mb-12 text-orange-400 border border-orange-400 outline-none placeholder:text-orange-300 rounded-3xl">
     <div class="gap-4 space-y-3 columns-6">
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/2.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/2.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/5jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/2.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/5jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/2.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/5jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/2.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/5jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
+        <div>
+            <a href="{{ url('/book/1') }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
+            </a>
+        </div>
+        <div class="w-full shadow-lg cursor-pointer ">
+            <a href="{{ url('/book/1') }}">
+                <img src="{{ asset('image/1.jpeg') }}" class="rounded-2xl " />
+            </a>
+        </div>
 
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/2.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/2.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
 
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/2.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/2.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
-
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/2.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/3.jpg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/4.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/1.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
-        <img class="w-full shadow-lg cursor-pointer rounded-2xl " src="{{ asset('image/5.jpeg') }}" />
     </div>
 
 </div>

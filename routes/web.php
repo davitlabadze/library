@@ -24,6 +24,10 @@ Route::get('/books', function () {
     return view('pages/books');
 });
 
+Route::get('/book/{id}', function () {
+    return view('pages/book');
+});
+
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('/authors', AuthorController::class)->except('show')->names('authors');

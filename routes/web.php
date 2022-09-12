@@ -43,6 +43,11 @@ Route::get('/change-password', function () {
     return view('auth/changePassword');
 });
 
+Route::get('/success-change-password', function () {
+    return view('auth/successChangePassword');
+});
+
+
 
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');

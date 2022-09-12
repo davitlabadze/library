@@ -27,7 +27,7 @@
     </button>
     <div class="flex mt-2 ml-10 space-x-2">
         <p class="text-gray-100">Don’t have and account?</p>
-        <a href="url{{ '/sign-up' }}" class="font-bold text-white">Sign up for free</a>
+        <a href="{{ url('/sign-up') }}" class="font-bold text-white">Sign up for free</a>
     </div>
 
 </form>

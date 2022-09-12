@@ -31,6 +31,11 @@ Route::get('/book/{id}', function () {
 Route::get('/sign-in', function () {
     return view('auth/signin');
 });
+
+Route::get('/sign-up', function () {
+    return view('auth/signup');
+});
+
 Route::get('/forgot-password', function () {
     return view('auth/forgotPassword');
 });

@@ -31,6 +31,9 @@ Route::get('/book/{id}', function () {
 Route::get('/sign-in', function () {
     return view('auth/signin');
 });
+Route::get('/forgot-password', function () {
+    return view('auth/forgotPassword');
+});
 
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');

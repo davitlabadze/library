@@ -44,6 +44,11 @@ Route::get('/confirmation', function () {
     return view('auth/confirmation');
 });
 
+Route::get('/account-confirmation', function () {
+    return view('auth/accountConfirmation');
+});
+
+
 Route::get('/change-password', function () {
     return view('auth/changePassword');
 });
@@ -51,6 +56,8 @@ Route::get('/change-password', function () {
 Route::get('/success-change-password', function () {
     return view('auth/successChangePassword');
 });
+
+
 
 
 

@@ -39,6 +39,10 @@ Route::get('/confirmation', function () {
     return view('auth/confirmation');
 });
 
+Route::get('/change-password', function () {
+    return view('auth/changePassword');
+});
+
 
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');

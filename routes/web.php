@@ -35,6 +35,11 @@ Route::get('/forgot-password', function () {
     return view('auth/forgotPassword');
 });
 
+Route::get('/confirmation', function () {
+    return view('auth/confirmation');
+});
+
+
 Route::prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('/authors', AuthorController::class)->except('show')->names('authors');

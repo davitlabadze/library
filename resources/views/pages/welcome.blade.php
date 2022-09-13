@@ -4,12 +4,23 @@
     <nav class="flex justify-between px-24">
         <h1 class="text-3xl font-black">E-Library</h1>
         @auth
-        <div class="flex space-x-5">
+        <div class="flex space-x-5" x-data="{ open: false }">
             <div class="mt-2 text-white">
                 <img src="{{ asset('image/bookmark.svg') }}" class="w-6 h-6 text-white" alt="">
             </div>
-            <img src="{{ asset('image/avatar.jpeg') }}" class="w-10 h-10 text-center rounded-full" alt="">
+            <img @click="open = !open" src="{{ asset('image/avatar.jpeg') }}" class="w-10 h-10 text-center rounded-full"
+                alt="">
+
+            <span class="absolute items-center mt-12 text-sm font-medium " x-show="open">
+                <button x-date="{}" @click.prevent="document.querySelector('#signout-form').submit()"
+                    class="block w-full px-4 py-2 text-sm leading-5 text-orange-400 transition duration-150 ease-in-out bg-white hover:bg-orange-400 hover:text-white ">
+                    sign out </button>
+                <form id="signout-form" action="{{ route('signout') }}" method="POST" class="hidden">
+                    @csrf
+                </form>
+            </span>
         </div>
+
         @endauth
         @guest
         <div>

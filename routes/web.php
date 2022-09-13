@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,9 @@ Route::get('/sign-in', function () {
 
 Route::get('/sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('/sign-up', [RegisterController::class, 'store'])->middleware('guest');
+
+
+Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('signout');
 
 Route::get('/forgot-password', function () {
     return view('auth/forgotPassword');

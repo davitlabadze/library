@@ -5,6 +5,9 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Models\User;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,33 +27,30 @@ Route::get('/', function () {
 
 Route::get('/books', function () {
     return view('pages/books');
-});
+})->middleware(['auth', 'verified']);
 
 Route::get('/book/{id}', function () {
     return view('pages/book');
-});
+})->middleware(['auth', 'verified']);
 
 
-Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('signin');
-Route::post('sign-in', [SessionsController::class, 'store'])->middleware('guest');
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
+Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
-Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
 
-Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('signout');
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
 
 Route::get('/forgot-password', function () {
     return view('auth/forgotPassword');
 });
 
-Route::get('/confirmation', function () {
-    return view('auth/confirmation');
-});
 
 Route::get('/account-confirmation', function () {
     return view('auth/accountConfirmation');
-});
+})->name('signed');
 
 
 Route::get('/change-password', function () {
@@ -70,3 +70,25 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/authors', AuthorController::class)->except('show')->names('authors');
     Route::resource('/books', BookController::class)->except('show')->names('books');
 });
+
+Route::get('/confirmation', function () {
+    return view('auth/confirmation');
+})->name('verify');
+
+Route::get('/email/verify', function () {
+    return redirect()->route('verify');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+Route::post('/email/verification-notification', function (Request $request) {
+
+    $request->user()->sendEmailVerificationNotification();
+
+    return redirect('/');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');

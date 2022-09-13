@@ -10,7 +10,7 @@
     </div>
     <p class="mt-10 ml-4 font-black text-white">Your password has been updeted successfully</p>
     <button class="p-3 mt-6 bg-white rounded-lg w-96 ">
-        <a href="{{ url('sign-in') }}" class="font-black text-orange-400">Sign In</a>
+        <a href="{{ url('login') }}" class="font-black text-orange-400">Sign In</a>
     </button>
 </div>
 @endsection

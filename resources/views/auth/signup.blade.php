@@ -43,7 +43,7 @@
     </button>
     <div class="flex mt-3 ml-10 space-x-2">
         <p class="text-gray-100">Already have an account?</p>
-        <a href="{{ url('/sign-in') }}" class="font-bold text-white">Sign In</a>
+        <a href="{{ url('/login') }}" class="font-bold text-white">Log In</a>
     </div>
 
 </form>

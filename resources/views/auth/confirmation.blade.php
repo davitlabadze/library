@@ -9,6 +9,13 @@
         </svg>
     </div>
     <p class="mt-10 ml-12 font-black text-white">We have sent you a confirmation email</p>
+    <form method="POST" action="{{ route('verification.send') }}">
+        @csrf
+        <button type="submit" class="p-2 mt-6 text-orange-500 bg-white rounded-lg w-96">
+            Resend Comfimration
+        </button>
+    </form>
+
 </div>
 
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRegisterRequest;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -17,8 +18,10 @@ class RegisterController extends Controller
     {
         $user = User::create($request->validated());
 
+        event(new Registered($user));
+
         auth()->login($user);
 
-        return redirect('/');
+        return redirect()->route('verify');
     }
 }

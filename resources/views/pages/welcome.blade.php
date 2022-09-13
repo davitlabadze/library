@@ -14,8 +14,8 @@
             <span class="absolute items-center mt-12 text-sm font-medium " x-show="open">
                 <button x-date="{}" @click.prevent="document.querySelector('#signout-form').submit()"
                     class="block w-full px-4 py-2 text-sm leading-5 text-orange-400 transition duration-150 ease-in-out bg-white hover:bg-orange-400 hover:text-white ">
-                    sign out </button>
-                <form id="signout-form" action="{{ route('signout') }}" method="POST" class="hidden">
+                    Log Out </button>
+                <form id="signout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                     @csrf
                 </form>
             </span>
@@ -24,9 +24,10 @@
         @endauth
         @guest
         <div>
-            <a href="{{ route('signin') }}"
-                class="p-3 text-orange-500 border border-orange-500 rounded-3xl hover:text-white hover:bg-orange-500">Sign
-                In</a>
+            <a href="{{ route('login') }}"
+                class="p-3 text-orange-500 border border-orange-500 rounded-3xl hover:text-white hover:bg-orange-500">
+                Log In
+            </a>
         </div>
         @endguest
     </nav>

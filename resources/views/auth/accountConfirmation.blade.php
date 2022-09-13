@@ -9,8 +9,12 @@
         </svg>
     </div>
     <p class="mt-10 ml-8 font-black text-white">Your account is confirmed, you can sign in</p>
-    <button class="p-3 mt-6 bg-white rounded-lg w-96 ">
-        <a href="{{ url('sign-in') }}" class="font-black text-orange-400">Sign In</a>
-    </button>
+
+    <form action="{{ route('logout') }}" method="POST" class="hidden">
+        @csrf
+        <button class="p-3 mt-6 bg-white rounded-lg w-96 ">
+            <p class="font-black text-orange-400">Sign In</p>
+        </button>
+    </form>
 </div>
 @endsection

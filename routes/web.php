@@ -30,12 +30,12 @@ Route::get('/book/{id}', function () {
     return view('pages/book');
 });
 
-Route::get('/sign-in', function () {
-    return view('auth/signin');
-});
 
-Route::get('/sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-Route::post('/sign-up', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('signin');
+Route::post('sign-in', [SessionsController::class, 'store'])->middleware('guest');
+
+Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
+Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
 
 
 Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('signout');

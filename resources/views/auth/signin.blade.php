@@ -1,22 +1,29 @@
 @extends('layouts.authLayout')
 @section('auth')
 
-<form action="#" class="mt-12 ml-14">
-    <div class="">
+<form method="POST" action="{{ route('signin') }}" class="mt-12 ml-14">
+    @csrf
+    <div class="mt-4">
         <label for="email" class="block mb-1 text-2xl text-left text-white">Email</label>
         <input type="email" name="email" id="email"
             class="p-3 text-orange-400 rounded-lg outline-none w-96 placeholder:text-orange-300"
-            placeholder="JhonDoe@gmai.com">
+            placeholder="JhonDoe@gmail.com">
+        @error('email')
+        <div class="text-white">{{ $message }}</div>
+        @enderror
     </div>
     <div class="mt-4">
         <label for="password" class="block mb-1 text-2xl text-left text-white">Password</label>
-        <input type="password" name="password" id="password"
+        <input type="password" name="password" id="password" autocomplete
             class="p-3 text-orange-400 rounded-lg outline-none w-96 placeholder:text-orange-300" placeholder="********">
+        @error('password')
+        <div class="text-white">{{ $message }}</div>
+        @enderror
     </div>
     <div class="flex mt-4 ">
         <div class="flex">
-            <input type="checkbox" name="checkbox" class="w-5 h-5 mt-1 ml-2 accent-orange-400" />
-            <label for="checkbox" class="ml-2 font-semibold text-gray-100 ">Remember</label>
+            <input type="checkbox" name="remember" class="w-5 h-5 mt-1 ml-2 accent-orange-400" />
+            <label for="remember" class="ml-2 font-semibold text-gray-100 ">Remember</label>
         </div>
         <a href="{{ url('/forgot-password')}}" class="ml-32 font-semibold text-white cursor-pointer ">
             Forgot password?</a>

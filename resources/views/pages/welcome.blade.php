@@ -24,7 +24,7 @@
         @endauth
         @guest
         <div>
-            <a href="{{ url('/sign-in') }}"
+            <a href="{{ route('signin') }}"
                 class="p-3 text-orange-500 border border-orange-500 rounded-3xl hover:text-white hover:bg-orange-500">Sign
                 In</a>
         </div>

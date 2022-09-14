@@ -65,7 +65,7 @@ Route::get('/success-change-password', function () {
 
 
 
-Route::prefix('/admin')->middleware('can:admin', 'signed')->group(function () {
+Route::prefix('/admin')->middleware(['can:admin', 'auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('/authors', AuthorController::class)->except('show')->names('authors');
     Route::resource('/books', BookController::class)->except('show')->names('books');

@@ -1,7 +1,8 @@
 @extends('layouts.authLayout')
 @section('auth')
 
-<form action="#" class="mt-12 ml-14">
+<form action="{{ route('password.email') }}" method="POST" class="mt-12 ml-14">
+    @csrf
     <div class="">
         <label for="email" class="block mb-1 text-2xl text-left text-white">Email</label>
         <input type="email" name="email" id="email"

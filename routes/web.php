@@ -3,9 +3,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use App\Models\User;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -92,3 +92,9 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return redirect('/');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+
+Route::get('/forgot-password', [PasswordResetController::class, 'passwordRequest'])->middleware('guest')->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'passwordEmail'])->middleware('guest')->name('password.email');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'passwordReset'])->middleware('guest')->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'passwordUpadte'])->middleware('guest')->name('password.update');

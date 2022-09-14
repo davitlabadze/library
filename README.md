@@ -7,11 +7,11 @@
 - [Prerequisites](#prerequisites)
 - [Package](#package)
 - [Install and Run](#install-and-run)
+- [Admin](#admin)
 - [Database structure](#database-structure)
 - [Resources](#resources)
 
 
-<a name="about"></a>
 
 ## About the application
 
@@ -20,11 +20,10 @@ Library - The app is an e-library where instead of going to the library, you can
 ## App looks like 
 !['screenshot'](readme/screen.png)
 !['screenshot'](readme/1.png)
-!['author'](readme/2.png)
-!['book'](readme/3.png)
 
 
-<a name="pre"></a>
+
+
 
 ## Prerequisites
 | #                                                                                              |                                         NAME                                          | VERSION  |   Check Version    |
@@ -38,16 +37,17 @@ Library - The app is an e-library where instead of going to the library, you can
 
 
 
-<a name="package"></a>
+
 ## Package
 
-| name   | version    |
-| ------ | ---------- |
-| jquery | cdn 3.3.1  |
-| ajax   | cdn 4.0.10 |
+| name     | version    |
+| -------- | ---------- |
+| jquery   | cdn 3.3.1  |
+| ajax     | cdn 4.0.10 |
+| alpinejs | cdn 3.x.x  |
 
 
-<a name="iar"></a>
+
 
 ## Install and Run
 
@@ -94,21 +94,23 @@ Build App
 ```bash
 npm run build
 ```
-
 Run app 
->If the design is not as shown in the photo, open a new window(terminal or cmd or other) in the working environment and run the command  ```npm run dev```
 
 ```bash
 php artisan serve
 ```
 
+## Admin
+To get administrator rights, register with the specified email, password is optional.
 
-<a name="db"></a>
-
+Email
+```
+admin@admin.com
+```
 ## Database structure
 !['db'](readme/db.png)
 
-<a name="resources"></a>
+
 
 ##  Resources  
 

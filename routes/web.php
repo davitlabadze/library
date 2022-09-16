@@ -104,4 +104,4 @@ Route::post('/reset-password', [PasswordResetController::class, 'passwordUpadte'
 
 Route::get('/profile', function () {
     return view('pages/profile/profile');
-})->name('profile');
+})->middleware('auth')->name('profile');

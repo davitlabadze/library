@@ -8,11 +8,15 @@
             <h1 class="mt-6 ml-12 text-2xl">Deborah Guthrie</h1>
             <button
                 class="p-2 mt-6 ml-12 text-orange-400 duration-300 bg-white rounded-xl hover:text-white hover:bg-orange-400">
-                Go Library
+                <a href="{{ route('welcome') }}">Go Library</a>
             </button>
-            <button
-                class="p-2 mt-6 ml-6 text-orange-400 duration-300 bg-white rounded-xl hover:text-white hover:bg-orange-400">Log
-                Out</button>
+            <button x-date="{}" @click.prevent="document.querySelector('#signout-form').submit()"
+                class="p-2 mt-6 ml-6 text-orange-400 duration-300 bg-white rounded-xl hover:text-white hover:bg-orange-400">
+                Log Out
+                <form id="signout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                    @csrf
+                </form>
+            </button>
         </div>
     </div>
     <h1 class="mt-12 text-2xl text-center">My subscribed books</h1>

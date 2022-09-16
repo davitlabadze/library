@@ -11,7 +11,7 @@
     <title>Library</title>
 </head>
 
-<body class="bg-orange-100">
+<body class="bg-orange-100 select-none">
     @yield('content')
 </body>
 

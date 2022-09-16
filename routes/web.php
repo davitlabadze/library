@@ -98,3 +98,10 @@ Route::get('/forgot-password', [PasswordResetController::class, 'passwordRequest
 Route::post('/forgot-password', [PasswordResetController::class, 'passwordEmail'])->middleware('guest')->name('password.email');
 Route::get('/reset-password/{token}', [PasswordResetController::class, 'passwordReset'])->middleware('guest')->name('password.reset');
 Route::post('/reset-password', [PasswordResetController::class, 'passwordUpadte'])->middleware('guest')->name('password.update');
+
+
+//profile
+
+Route::get('/profile', function () {
+    return view('pages/profile/profile');
+})->name('profile');

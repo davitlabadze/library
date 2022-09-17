@@ -3,7 +3,6 @@
 <div class="mt-12">
     <nav class="flex justify-between px-24">
         <h1 class="text-3xl font-black">E-Library</h1>
-
         @auth
         <div class="flex space-x-5" x-data="{ open: false }">
             <div class="mt-2 text-white">
@@ -62,28 +61,38 @@
             <img src="{{ asset('storage/'.$randombook->thumbnail) }}"
                 class="translate-y-10 ml-20 w-96 mt-12 shadow-[20px_0px_20px_rgba(0,0,0,0.3)]" alt="">
         </div>
-        <div class="p-36">
-            <div class="w-56 p-4 bg-orange-300 shadow-xl h-96 rounded-2xl">
-                @foreach ($test as $authors)
-                <h1> @if(count($test)>1)
-                    {{ dd($authors)}}
-                    @else
-                    {{ $authors->name }}
-
-                    @endif</h1>
-                @endforeach
-
-                {{-- <h1>Collection</h1> --}}
-                {{-- <p class="mt-2 text-stone-600">67 book</p> --}}
+        @if($test > 1)
+        <div class="py-36">
+            <div class="grid grid-cols-4">
                 @foreach ($randombook->authors as $authors)
-                <img src="{{ asset('storage/'.$authors->thumbnail) }}" class=" mt-11" alt="">
+                <div class="w-56 p-4 bg-orange-300 shadow-xl h-96 rounded-2xl hover:z-10">
+                    <div>
+                        <h1>
+                            {{ $authors->name }}
+                        </h1>
+                        <img src="{{ asset('storage/'.$authors->thumbnail) }}" class="mt-6" alt="">
+                    </div>
 
+                </div>
                 @endforeach
-
-
             </div>
 
         </div>
+        @else
+        @foreach ($randombook->authors as $key => $authors)
+        <div class="p-36">
+            <div class="w-56 p-4 bg-orange-300 shadow-xl h-96 rounded-2xl">
+                <div>
+                    <h1>
+                        {{ $authors->name }}
+                    </h1>
+                    <img src="{{ asset('storage/'.$authors->thumbnail) }}" class="mt-6" alt="">
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @endif
+
         @endforeach
     </div>
 

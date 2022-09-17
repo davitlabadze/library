@@ -7,21 +7,27 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-    public function index()
+    /**
+     * Welcome
+     *
+     * @return object
+     */
+
+    public function index(): object
     {
         $Books = Book::inRandomOrder()->with('authors');
         $RandomBook = $Books->limit(1)->get();
         $Bestsellers = $Books->latest()->take(3)->get();
-        $test = [];
-        foreach ($RandomBook as $RandomBook) {
-            $test = array_push($RandomBook->authors);
+
+
+        $test = 0;
+        foreach ($RandomBook as $key) {
+            $test = count($key->authors);
         }
-        // $countRandomBook = count($RandomBook);
-        // dd($countRandomBook);
-        // $randomBook = $book->;
-        // $bestsellers = $book->latest()->take(3)->get();
+
+
+
+
         return view('pages.welcome', ['randombook' => $RandomBook, 'bestsellers' => $Bestsellers, 'test' => $test]);
-        // return view('pages.welcome', ['bestsellers' => $Bestsellers]);
-        // return view('pages.welcome', ['randomBook' => $randomBook]);
     }
 }

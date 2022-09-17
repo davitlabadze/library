@@ -3,6 +3,7 @@
 <div class="mt-12">
     <nav class="flex justify-between px-24">
         <h1 class="text-3xl font-black">E-Library</h1>
+
         @auth
         <div class="flex space-x-5" x-data="{ open: false }">
             <div class="mt-2 text-white">
@@ -55,19 +56,35 @@
             <input type="search" name="search" id="search" placeholder="Title, author, or topics"
                 class="p-4 px-12 mt-6 bg-no-repeat shadow-md outline-none bg-left-1 bg-search rounded-3xl" />
         </div>
+        @foreach($randombook as $randombook )
+
         <div>
-            <img src="{{ asset('image/5.jpeg') }}"
+            <img src="{{ asset('storage/'.$randombook->thumbnail) }}"
                 class="translate-y-10 ml-20 w-96 mt-12 shadow-[20px_0px_20px_rgba(0,0,0,0.3)]" alt="">
         </div>
         <div class="p-36">
             <div class="w-56 p-4 bg-orange-300 shadow-xl h-96 rounded-2xl">
-                <h1>Leo Tolstoy</h1>
-                <h1>Collection</h1>
-                <p class="mt-2 text-stone-600">67 book</p>
-                <img src="{{ asset('image/LeoTolstoy.jpeg') }}" class=" mt-11" alt="">
+                @foreach ($test as $authors)
+                <h1> @if(count($test)>1)
+                    {{ dd($authors)}}
+                    @else
+                    {{ $authors->name }}
+
+                    @endif</h1>
+                @endforeach
+
+                {{-- <h1>Collection</h1> --}}
+                {{-- <p class="mt-2 text-stone-600">67 book</p> --}}
+                @foreach ($randombook->authors as $authors)
+                <img src="{{ asset('storage/'.$authors->thumbnail) }}" class=" mt-11" alt="">
+
+                @endforeach
+
+
             </div>
 
         </div>
+        @endforeach
     </div>
 
 </div>
@@ -76,44 +93,30 @@
     border-b-[50px] border-b-transparent
     border-r-[110px] border-r-orange-100
     "></div>
-<div class="z-50 w-11/12 h-4 ml-20 bg-white rounded "></div>
-
+<div class="z-50 w-11/12 h-4 ml-20 bg-white rounded"></div>
 <div class="container mx-auto mb-12 bg-orange-50 rounded-b-3xl">
 
     <div class="w-full h-12 opacity-90 -z-20 bg-gradient-to-b from-gray-400 blur-sm"></div>
 
     <div class="absolute flex text-xl -rotate-90 mt-36">Recent Bestsellers</div>
     <div class="grid grid-cols-3 mt-12 mb-12 text-center ">
+
+        @foreach ($bestsellers as $bestseller)
         <div class="grid grid-cols-2 mb-12 ">
-            <img src="{{ asset('image/4.jpeg') }}" class="h-auto ml-28 w-36 " alt="image">
+            <img src="{{ asset('storage/'.$bestseller->thumbnail) }}" class="h-auto ml-28 w-36" alt="image">
             <div class="relative">
-                <h1>A Game of THRONES</h1>
-                <p class="mt-2 text-gray-400">GEORGE R.R MARTIN</p>
+                <h1> {{ $bestseller->name }}</h1>
+                <p class="mt-2 text-gray-400">
+                    @foreach ($bestseller->authors as $authors)
+                    {{ $authors->name }}
+                    @endforeach
+                </p>
                 <p class="w-16 mt-2 ml-24 text-white bg-green-500 rounded-md">Free</p>
                 <button
                     class="absolute p-2 text-xl text-orange-400 border border-orange-400 left-20 bottom-2 rounded-3xl">Subscribe</button>
             </div>
         </div>
-        <div class="grid grid-cols-2 mb-12 ">
-            <img src="{{ asset('image/1.jpeg') }}" class="h-auto ml-28 w-36 " alt="image">
-            <div class="relative">
-                <h1>Harry Potter: and the Chamber of secrets</h1>
-                <p class="mt-2 text-gray-400">J.K ROWLING</p>
-                <p class="w-16 mt-2 ml-24 text-white bg-red-500 rounded-md">Busy</p>
-                <button
-                    class="absolute p-2 text-xl text-orange-400 border border-orange-400 left-20 bottom-2 rounded-3xl">Bookmark</button>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 mb-12">
-            <img src="{{ asset('image/2.jpeg') }}" class="h-auto ml-28 w-36 " alt="image">
-            <div class="relative">
-                <h1>The OPPOSITE of Fate hardcover</h1>
-                <p class="mt-2 text-gray-400">AMY TAN</p>
-                <p class="w-16 mt-2 ml-24 text-white bg-green-500 rounded-md">Free</p>
-                <button
-                    class="absolute p-2 text-xl text-orange-400 border border-orange-400 left-20 bottom-2 rounded-3xl">Subscribe</button>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

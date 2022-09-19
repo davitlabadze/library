@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\frontend\BookController as FrontendBookController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -24,13 +25,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
-Route::get('/books', function () {
-    return view('pages/books');
-})->middleware(['auth', 'verified']);
+Route::get('/books', [FrontendBookController::class, 'index'])->middleware(['auth', 'verified'])->name('books');
 
 Route::get('/book/{id}', function () {
     return view('pages/book');
-})->middleware(['auth', 'verified']);
+})->middleware(['auth', 'verified'])->name('book');
 
 
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest')->name('login');

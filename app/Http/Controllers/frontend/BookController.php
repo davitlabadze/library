@@ -18,4 +18,12 @@ class BookController extends Controller
         $books = Book::get();
         return view('pages.books', ['books' => $books]);
     }
+
+    public function show($id)
+    {
+        $book = Book::with('authors')->where('id', $id)->get();
+        $suggestedbooks = Book::inRandomOrder()->limit(5)->get();
+
+        return view('pages.book', ['book' => $book, 'suggestedbooks' => $suggestedbooks]);
+    }
 }

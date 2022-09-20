@@ -26,10 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Route::get('/books', [FrontendBookController::class, 'index'])->middleware(['auth', 'verified'])->name('books');
-
-Route::get('/book/{id}', function () {
-    return view('pages/book');
-})->middleware(['auth', 'verified'])->name('book');
+Route::get('/book/{id}', [FrontendBookController::class, 'show'])->middleware(['auth', 'verified'])->name('book');
 
 
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest')->name('login');

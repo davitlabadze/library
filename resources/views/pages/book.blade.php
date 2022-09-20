@@ -44,14 +44,18 @@
             @foreach($book->authors as $author)
             <p class="mt-2 text-2xl text-gray-400">{{ $author->name }}</p>
             @endforeach
-            @if($book->status === 1)
+            @if($book->status === 0)
             <p class="w-12 p-2 mt-6 text-white bg-green-500 rounded-md">Free</p>
+            <button class="p-2 mt-12 text-xl text-orange-400 border border-orange-400 bottom-96 rounded-3xl">
+                Subscribe
+            </button>
             @else
             <p class="w-12 p-2 mt-6 text-white bg-red-500 rounded-md">Busy</p>
 
+            <button class="p-2 mt-12 text-xl text-orange-400 border border-orange-400 bottom-96 rounded-3xl">
+                BookMark
+            </button>
             @endif
-            <button
-                class="p-2 mt-12 text-xl text-orange-400 border border-orange-400 bottom-96 rounded-3xl">Subscribe</button>
         </div>
         @endforeach
     </div>

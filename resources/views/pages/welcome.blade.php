@@ -120,7 +120,11 @@
                     {{ $authors->name }}
                     @endforeach
                 </p>
+                @if($bestseller->status === 0)
                 <p class="w-16 mt-2 ml-24 text-white bg-green-500 rounded-md">Free</p>
+                @else
+                <p class="w-16 mt-2 ml-24 text-white bg-red-500 rounded-md">Busy</p>
+                @endif
                 <button
                     class="absolute p-2 text-xl text-orange-400 border border-orange-400 left-20 bottom-2 rounded-3xl">Subscribe</button>
             </div>

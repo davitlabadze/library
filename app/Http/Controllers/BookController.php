@@ -64,6 +64,7 @@ class BookController extends Controller
             'name'      => 'required',
             'year'      => 'required|digits:4|integer',
             'thumbnail' => 'required',
+            'stock'     => 'required|min:0'
         ]);
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 

@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->boolean('status')->default(false);
+            $table->bigInteger('stock');
             $table->year('year');
             $table->string('thumbnail');
-            $table->bigInteger('stock');
             $table->timestamps();
         });
     }

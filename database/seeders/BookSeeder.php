@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Book;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class BookSeeder extends Seeder
@@ -21,32 +20,38 @@ class BookSeeder extends Seeder
             'name' => "Harry Potter and the Chamber of Secrets",
             'year' => "1998",
             'status' => 0,
-            'thumbnail' => "1.jpeg"
+            'thumbnail' => "1.jpeg",
+            'stock' =>  '5'
         ]);
         Book::create([
             'name' => "The opposite of fate",
             'year' => "2001",
             'status' => 0,
-            'thumbnail' => "2.jpeg"
+            'thumbnail' => "2.jpeg",
+            'stock' =>  '5'
+
         ]);
         Book::create([
             'name' => "Goodreads Being Mortal: Medicine and What Matters in the End",
             'year' => "2014",
             'status' => 1,
-            'thumbnail' => "3.jpg"
+            'thumbnail' => "3.jpg",
+            'stock' =>  '0'
         ]);
         Book::create([
             'name' => "A Game of Thrones",
             'year' => "1996",
             'status' => 0,
-            'thumbnail' => "4.jpeg"
+            'thumbnail' => "4.jpeg",
+            'stock' =>  '2'
         ]);
 
         Book::create([
             'name' => "Anna Karenina",
             'year' => "1878",
             'status' => 1,
-            'thumbnail' => "5.jpeg"
+            'thumbnail' => "5.jpeg",
+            'stock' =>  '5'
         ]);
     }
 }

@@ -60,4 +60,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
         $this->notify(new ResetPassword($url));
     }
+
+    public function books()
+    {
+        return $this->belongsToMany(Book::class);
+    }
 }

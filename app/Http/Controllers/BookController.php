@@ -29,10 +29,10 @@ class BookController extends Controller
         }
         if ($request->status) {
             if ($request->status == "free" || $request->status == "Free" || $request->status == "FREE") {
-                $books->where('status', 'LIKE', 0);
+                $books->where('stock', '>', 0);
             }
             if ($request->status == "busy" || $request->status == "Busy" || $request->status == "BUSY") {
-                $books->where('status', 'LIKE', 1);
+                $books->where('stock', '=', 0);
             }
         }
         $books = $books->get();

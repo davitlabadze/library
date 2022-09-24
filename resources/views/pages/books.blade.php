@@ -15,8 +15,13 @@
         @foreach($books as $book)
         <div>
             <a href="{{ route('book',['id'=>$book->id]) }}" class="w-full shadow-lg cursor-pointer rounded-2xl ">
+                @if(!File::exists(public_path('storage/'.$book->thumbnail)))
+                <img class="w-full shadow-lg cursor-pointer rounded-2xl "
+                    src="{{ asset('image/'. $book->thumbnail ) }}" />
+                @else
                 <img class="w-full shadow-lg cursor-pointer rounded-2xl "
                     src="{{ asset('storage/'. $book->thumbnail ) }}" />
+                @endif
             </a>
         </div>
         @endforeach

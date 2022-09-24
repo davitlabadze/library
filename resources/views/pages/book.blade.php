@@ -37,7 +37,12 @@
     <div class="grid grid-cols-2 ">
         @foreach($book as $book)
         <div>
+            @if(!File::exists(public_path('storage/'.$book->thumbnail)))
+            <img src="{{ asset('image/'. $book->thumbnail) }}" class="h-auto shadow-lg rounded-xl w-96 ml-44" alt="">
+
+            @else
             <img src="{{ asset('storage/'. $book->thumbnail) }}" class="h-auto shadow-lg rounded-xl w-96 ml-44" alt="">
+            @endif
         </div>
         <div class="text-left">
             <h1 class="py-4 text-3xl text-left ">{{ $book->name }}</h1>
@@ -63,8 +68,13 @@
         @foreach($suggestedbooks as $suggestedbook)
         <div>
             <a href="0">
+                @if(!File::exists(public_path('storage/'.$suggestedbook->thumbnail)))
+                <img src="{{ asset('image/'. $suggestedbook->thumbnail) }}" class="w-full h-auto shadow-lg rounded-xl"
+                    alt="book">
+                @else
                 <img src="{{ asset('storage/'. $suggestedbook->thumbnail) }}" class="w-full h-auto shadow-lg rounded-xl"
                     alt="book">
+                @endif
             </a>
         </div>
         @endforeach

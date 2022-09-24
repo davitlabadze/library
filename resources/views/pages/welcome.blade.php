@@ -138,7 +138,7 @@
                     {{ $authors->name }}
                     @endforeach
                 </p>
-                @if($bestseller->status === 0)
+                @if($bestseller->stock > 0)
                 <p class="w-16 mt-2 ml-24 text-white bg-green-500 rounded-md">Free</p>
                 @else
                 <p class="w-16 mt-2 ml-24 text-white bg-red-500 rounded-md">Busy</p>

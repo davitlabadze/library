@@ -58,8 +58,13 @@
         @foreach($randombook as $randombook )
 
         <div>
+            @if(!File::exists(public_path('storage/'.$randombook->thumbnail)))
+            <img src="{{ asset('image/'.$randombook->thumbnail) }}"
+                class="translate-y-10 ml-20 w-96 mt-12 shadow-[20px_0px_20px_rgba(0,0,0,0.3)]" alt="">
+            @else
             <img src="{{ asset('storage/'.$randombook->thumbnail) }}"
                 class="translate-y-10 ml-20 w-96 mt-12 shadow-[20px_0px_20px_rgba(0,0,0,0.3)]" alt="">
+            @endif
         </div>
         @if($test > 1)
         <div class="py-36">
@@ -70,7 +75,11 @@
                         <h1>
                             {{ $authors->name }}
                         </h1>
+                        @if(!File::exists(public_path('storage/'.$authors->thumbnail)))
+                        <img src="{{ asset('image/'.$authors->thumbnail) }}" class="mt-6" alt="">
+                        @else
                         <img src="{{ asset('storage/'.$authors->thumbnail) }}" class="mt-6" alt="">
+                        @endif
                     </div>
 
                 </div>
@@ -86,7 +95,11 @@
                     <h1>
                         {{ $authors->name }}
                     </h1>
+                    @if(!File::exists(public_path('storage/'.$authors->thumbnail)))
+                    <img src="{{ asset('image/'.$authors->thumbnail) }}" class="mt-6" alt="">
+                    @else
                     <img src="{{ asset('storage/'.$authors->thumbnail) }}" class="mt-6" alt="">
+                    @endif
                 </div>
             </div>
         </div>
@@ -112,7 +125,12 @@
 
         @foreach ($bestsellers as $bestseller)
         <div class="grid grid-cols-2 mb-12 ">
+            @if(!File::exists(public_path('storage/'.$bestseller->thumbnail)))
+            <img src="{{ asset('image/'.$bestseller->thumbnail) }}" class="h-auto ml-28 w-36" alt="image">
+
+            @else
             <img src="{{ asset('storage/'.$bestseller->thumbnail) }}" class="h-auto ml-28 w-36" alt="image">
+            @endif
             <div class="relative">
                 <h1> {{ $bestseller->name }}</h1>
                 <p class="mt-2 text-gray-400">

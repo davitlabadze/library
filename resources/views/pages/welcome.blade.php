@@ -140,11 +140,18 @@
                 </p>
                 @if($bestseller->stock > 0)
                 <p class="w-16 mt-2 ml-24 text-white bg-green-500 rounded-md">Free</p>
+                <button
+                    class="absolute p-2 text-xl text-orange-400 border border-orange-400 left-20 bottom-2 rounded-3xl">
+                    Subscribe
+                </button>
                 @else
                 <p class="w-16 mt-2 ml-24 text-white bg-red-500 rounded-md">Busy</p>
-                @endif
                 <button
-                    class="absolute p-2 text-xl text-orange-400 border border-orange-400 left-20 bottom-2 rounded-3xl">Subscribe</button>
+                    class="absolute p-2 text-xl text-orange-400 border border-orange-400 left-20 bottom-2 rounded-3xl">
+                    Bookmark
+                </button>
+                @endif
+
             </div>
         </div>
         @endforeach
